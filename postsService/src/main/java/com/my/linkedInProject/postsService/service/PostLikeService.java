@@ -5,19 +5,26 @@ import com.my.linkedInProject.postsService.exception.BadRequestException;
 import com.my.linkedInProject.postsService.exception.ResourceNotFoundException;
 import com.my.linkedInProject.postsService.repository.PostLikeRepository;
 import com.my.linkedInProject.postsService.repository.PostRepository;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-@RequiredArgsConstructor
-@Slf4j
 public class PostLikeService {
+    
+    private static final Logger log = LoggerFactory.getLogger(PostLikeService.class);
+    
     private final PostLikeRepository postLikeRepository;
     private final PostRepository postRepository;
     private final ModelMapper modelMapper;
+    
+    public PostLikeService(PostLikeRepository postLikeRepository, PostRepository postRepository, ModelMapper modelMapper) {
+        this.postLikeRepository = postLikeRepository;
+        this.postRepository = postRepository;
+        this.modelMapper = modelMapper;
+    }
 
     @Transactional
     public void likePost(Long postId) {

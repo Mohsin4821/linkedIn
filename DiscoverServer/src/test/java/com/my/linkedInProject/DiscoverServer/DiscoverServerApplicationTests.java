@@ -1,4 +1,4 @@
-package com.my.linkedInProject.DiscoverServer.DiscoverServer;
+package com.my.linkedInProject.DiscoverServer;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

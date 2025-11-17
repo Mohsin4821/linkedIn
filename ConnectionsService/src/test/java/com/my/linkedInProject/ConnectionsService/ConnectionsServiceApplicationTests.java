@@ -1,4 +1,4 @@
-package com.my.linkedInProject.ConnectionsService.ConnectionsService;
+package com.my.linkedInProject.ConnectionsService;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

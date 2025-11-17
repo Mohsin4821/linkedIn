@@ -4,7 +4,6 @@ import com.my.linkedInProject.userService.dto.LoginRequestDto;
 import com.my.linkedInProject.userService.dto.SignupRequestDto;
 import com.my.linkedInProject.userService.dto.UserDto;
 import com.my.linkedInProject.userService.service.AuthService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,10 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/auth")
-@RequiredArgsConstructor
 public class UserController {
 
     private final AuthService authService;
+    
+    public UserController(AuthService authService) {
+        this.authService = authService;
+    }
 
     @PostMapping("/signup")
     public ResponseEntity<UserDto> signUp(@RequestBody SignupRequestDto signupRequestDto) {

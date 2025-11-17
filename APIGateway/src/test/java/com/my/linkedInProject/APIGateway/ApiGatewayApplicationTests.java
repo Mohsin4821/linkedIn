@@ -1,4 +1,4 @@
-package com.my.linkedInProject.APIGateway.APIGateway;
+package com.my.linkedInProject.APIGateway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

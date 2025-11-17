@@ -1,8 +1,7 @@
-package com.my.linkedInProject.ConnectionsService.ConnectionsService.controller;
+package com.my.linkedInProject.ConnectionsService.controller;
 
-import com.my.linkedInProject.ConnectionsService.ConnectionsService.entity.Person;
-import com.my.linkedInProject.ConnectionsService.ConnectionsService.service.ConnectionsService;
-import lombok.RequiredArgsConstructor;
+import com.my.linkedInProject.ConnectionsService.entity.Person;
+import com.my.linkedInProject.ConnectionsService.service.ConnectionsService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,10 +12,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/core")
-@RequiredArgsConstructor
 public class ConnectionsController {
 
     private final ConnectionsService connectionsService;
+    
+    public ConnectionsController(ConnectionsService connectionsService) {
+        this.connectionsService = connectionsService;
+    }
 
     @GetMapping("/{userId}/first-degree")
     public ResponseEntity<List<Person>> getFirstDegreeConnections(@PathVariable Long userId) {

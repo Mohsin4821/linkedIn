@@ -1,4 +1,4 @@
-package com.my.linkedInProject.DiscoverServer.DiscoverServer;
+package com.my.linkedInProject.DiscoverServer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

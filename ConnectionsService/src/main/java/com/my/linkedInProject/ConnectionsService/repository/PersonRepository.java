@@ -1,6 +1,6 @@
-package com.my.linkedInProject.ConnectionsService.ConnectionsService.repository;
+package com.my.linkedInProject.ConnectionsService.repository;
 
-import com.my.linkedInProject.ConnectionsService.ConnectionsService.entity.Person;
+import com.my.linkedInProject.ConnectionsService.entity.Person;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.data.neo4j.repository.query.Query;
 

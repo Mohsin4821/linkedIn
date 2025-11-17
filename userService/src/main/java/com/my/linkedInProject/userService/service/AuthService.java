@@ -7,19 +7,25 @@ import com.my.linkedInProject.userService.entity.User;
 import com.my.linkedInProject.userService.exception.BadRequestException;
 import com.my.linkedInProject.userService.repository.UserRepository;
 import com.my.linkedInProject.userService.utils.BCrypt;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
-@Slf4j
 public class AuthService {
+
+    private static final Logger log = LoggerFactory.getLogger(AuthService.class);
 
     private final UserRepository userRepository;
     private final ModelMapper modelMapper;
     private final JwtService jwtService;
+    
+    public AuthService(UserRepository userRepository, ModelMapper modelMapper, JwtService jwtService) {
+        this.userRepository = userRepository;
+        this.modelMapper = modelMapper;
+        this.jwtService = jwtService;
+    }
 
     public UserDto signUp(SignupRequestDto signupRequestDto) {
         log.info("Signup a user with email: {}", signupRequestDto.getEmail());
